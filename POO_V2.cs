@@ -1,71 +1,79 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practica_POO_v02
+namespace Practicav02
 {
-    class Apartamento
+    class Program
     {
         static void Main(string[] args)
         {
-            Apartamento edificio = new Apartamento();
-            bool seguir = true;
-            string entrada = "";
+            Apartamento apartamento = new Apartamento();
+            Console.WriteLine("Agregar datos de Apartamento: ");
+            Console.WriteLine("Direccion: ");
+            apartamento.direccion = Console.ReadLine();
+            Console.WriteLine("Color: ");
+            apartamento.Color = Console.ReadLine();
+            Console.WriteLine("Area de construccion: ");
+            apartamento.AreaConstruccion = Console.ReadLine();
+            Console.WriteLine("Parqueo: ");
+            apartamento.parqueo = Console.ReadLine();
+            Console.WriteLine("Habitaciones: ");
+            apartamento.habitacion = Console.ReadLine();
+            Console.WriteLine("Baños: ");
+            apartamento.banos = Console.ReadLine();
 
-            while (seguir)
+
+
+        }
+
+        public class Apartamento
+        {
+
+            string direccion { get; set; }
+            string Color { get; set; }
+            string AreaConstruccion { get; set; }
+            string parqueo { get; set; }
+            string habitacion { get; set; }
+            string bano { get; set; }
+
+
+
+            public Apartamento(string di, string co, string area, string par, string habi, string bano)
             {
-                Console.Clear();
-                
-                Console.WriteLine("Elija la opcion que desee: ");
-                Console.WriteLine("1 Datos apartamento ");
-                Console.WriteLine("2 Vender Apartamento ");
-                Console.WriteLine("3 Alquilar apartamento");
-                entrada = Console.ReadLine();
-                switch (entrada)
-                {
+                this.direccion = di;
+                this.color = co;
+                this.AreaConstruccion = area;
+                this.parqueo = par;
+                this.habitacion = habi;
+                this.bano = bano;
 
-                    case "1":
-                        Console.Clear();
+            }
 
-                        Console.WriteLine("Agregar datos de Apartamento: ");
-                        Console.WriteLine("Direccion: ");
-                        edificio.Direccion = Console.ReadLine();
-                        Console.WriteLine("Color: ");
-                        edificio.Color = Console.ReadLine();
-                        Console.WriteLine("Area de construccion: ");
-                       edificio.ConstruccionArea = Console.ReadLine();
-                        Console.WriteLine("Parqueo: ");
-                       edificio.Garage = Console.ReadLine();
-                        Console.WriteLine("Habitaciones: ");
-                        edificio.Habitaciones = Console.ReadLine();
-                        Console.WriteLine("Baños: ");
-                        edificio.Baños = Console.ReadLine();
-                        edificio.Imprimir();
-                      
-                        break;
 
-                    case "2":
-
-                        Console.Clear();
-                        edificio.Sell();
-                        break;
-
-                    case "3":
-                        Console.Clear();
-
-                        edificio.Rent();
-                        break;
-                    
-
-                    default:
-                        Console.WriteLine("Algo anda mal :( elija la opcion correcta :)");
-                        Console.ReadLine();
-                        break;
-                     
-                }
-                Console.ReadKey();
+            public void Imprimir()
+            {
+                Console.WriteLine("Caracteristicas: ");
+                Console.WriteLine("Direccion ", direccion);
+                Console.WriteLine("Color ", Color);
+                Console.WriteLine("Area de Construccion ", AreaConstruccion);
+                Console.WriteLine("Parqueo ", parqueo);
+                Console.WriteLine("Habitaciones ", habitacion);
+                Console.WriteLine(" Baños ", bano);
+                Console.ReadLine();
+            }
+            public void vender()
+            {
+                Console.WriteLine("Caracteristicas: ");
+                Console.WriteLine("Direccion ", direccion);
+                Console.WriteLine("Color ", Color);
+                Console.WriteLine("Area de Construccion ", AreaConstruccion);
+                Console.WriteLine("Parqueo ", parqueo);
+                Console.WriteLine("Habitaciones ", habitacion);
+                Console.WriteLine(" Baños ", bano);
+                Console.ReadLine();
             }
         }
     }
